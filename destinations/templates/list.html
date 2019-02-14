@@ -3,14 +3,24 @@
 {% block title %}List{% endblock title %}
 
 {% block content %}
-<br>
-<div class="row">
+
+
+<div class="row">  
   {% for destination in destinations %}
-  <a href="{% url 'destination-detail' destination.id %}">
-    <img src="{{destination.pretty_picture.url}}" />
-    <p>{{destination.name}}</p>
-    <p>{{destination.activities}}</p>
-  </a>
+  <div class="col-12 col-sm-6 .col-md-4 .col-lg-2">
+  <a target="_blank" href="{% url 'destination-detail' destination.id %}">
+    <div class="card bg-dark text-white  mb-2" >
+  <img class="card-img" src="{{destination.pretty_picture.url}}" alt="Card image">
+  <div class="card-img-overlay">
+	<div>
+    <h3 id="Hom" class="card-title font-weight-bold ">{{destination.name}}</h3>
+    </div>
+    <div class="mt-2">
+    <p id="Hom" class="card-text font-weight-bold">{{destination.activities}}</p>
+	</div>
+  </div>
+</div>
+</div>
   {% endfor %}
 </div>
-{% endblock content %}
+{% endblock content %}]

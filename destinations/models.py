@@ -7,3 +7,11 @@ class Destination(models.Model):
     pretty_picture = models.ImageField()
     activities = models.TextField()
     optimal_visiting_season = models.CharField(max_length=10)
+
+
+    def __str__(self):
+
+    	return self.name
+
+    
+    	

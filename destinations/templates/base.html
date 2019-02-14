@@ -6,13 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Add a link to the bootstrap CDN here -->
-  
-  
-  <!-- Uncomment the following line to include your custom CSS file -->
-  {% comment %} 
-    <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}"> 
-  {% endcomment %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}"> 
+  <link href="https://fonts.googleapis.com/css?family=Miss+Fajardose" rel="stylesheet">
 
   <title>{% block title %}{% endblock title %}</title>
 </head>
@@ -20,28 +16,45 @@
 <body>
   
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'destination-list' %}">Tourista</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<div class="pos-f-t nav-up">
+  <div class="collapse" id="navbarToggleExternalContent">
+
+    <div class="bg-dark p-4">
+
+      <a target="_blank" class="btn btn-secondary" href="{% url 'destination-create' %}">Add a destination</a>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+
       <span class="navbar-toggler-icon"></span>
     </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'destination-create' %}">Add a destination</a>
-        </li>
-      </ul>
-    </div>
+  <a class="navbar-brand" href="{% url 'destination-list' %}"><h4 id="Home"class="text-white">Tourista</h4></a>
   </nav>
+</div>
+
+
+
+
   <!-- End Navbar -->
 
-  <div class="container">
+
+  <div class="container mt-5 ">
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
     {% block content %} {% endblock content %}
   </div>
+  
 
-  <!-- Add your bootstrap script tags here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{% static 'custom.js' %}"></script>
 </body>
 
 </html>

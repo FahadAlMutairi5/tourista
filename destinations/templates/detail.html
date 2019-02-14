@@ -2,16 +2,21 @@
 
 {% block title %}Detail{% endblock title %} 
 
+
+
 {% block content %}
-    <p>{{destination.name}}</p>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
-    <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
-    </a>
-    <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
-    </a>
+
+    <div class="card mb-4">
+  <img class="card-img-top" src="{{destination.pretty_picture.url}}" alt="Card image cap">
+  <div class="card-body">
+    <h2 class="card-title font-weight-bold text-center">{{destination.name}}</h2>
+    
+    <p class="card-text"> <b>Description : </b>{{destination.description}}</p>
+    
+    <p class="card-title"> <b>Visiting Season : </b>  {{destination.optimal_visiting_season}}</p>
+    <a href="{% url 'destination-update' destination.id %}" class="btn btn-outline-secondary btn-block btn-lg">Update</a>
+    <a href="{% url 'destination-delete' destination.id %}" class="btn btn-outline-danger btn-block btn-lg">Delete</a>
+  </div>
+</div>
 {% endblock content %}
+
